@@ -91,7 +91,7 @@ class QloraTrainer:
         trainer.train()
 
         model_save_path = f"{self.config['model_output_dir']}/{self.config['model_name']}_adapter"
-        trainer.save_model(model_save_path)
+        trainer.model.save_pretrained(model_save_path)
         self.adapter_model = model
         print(f"Training complete, adapter model saved in {model_save_path}")
 
